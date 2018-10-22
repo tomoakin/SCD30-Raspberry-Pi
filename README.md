@@ -11,18 +11,18 @@ See https://github.com/raspberrypi/linux/issues/254
 
 Use i2c-gpio overlay instead of the Raspberry pi Hardware implementation of i2c.
 ## Hardware setup
-*Pull-up GPIO pins #23 and #24 to 3V3 (3.3 V) with 3 kohm resister.
-*Connect #23 to SDA and #24 to SCL.
+* Pull-up GPIO pins #23 and #24 to 3V3 (3.3 V) with 3 kohm resister.
+* Connect #23 to SDA and #24 to SCL.
 ## Software setup
-*Add a line in /boot/config.txt as follows
+* Add a line in /boot/config.txt as follows
 ```
 dtoverlay=i2c-gpio,i2c_gpio_sda=23,i2c_gpio_scl=24,i2c_gpio_delay_us=2
 ```
 See https://raspberrypi.stackexchange.com/questions/37796/how-to-use-i2c-gpio-with-raspberry-pi
 
-*Reboot
+* Reboot
 
-*Confirm to detect the SCD30 at 0x61 in the i2c-3 bus with `i2cdetect -y 3`
+* Confirm to detect the SCD30 at 0x61 in the i2c-3 bus with `i2cdetect -y 3`
 ```
 pi@raspberrypi:~ $ i2cdetect -y 3 
      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f

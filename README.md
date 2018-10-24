@@ -11,8 +11,10 @@ See https://github.com/raspberrypi/linux/issues/254
 
 Use i2c-gpio overlay instead of the Raspberry pi Hardware implementation of i2c.
 ## Hardware setup
-* Pull-up GPIO pins #23 and #24 to 3V3 (3.3 V) with 3 kohm resister.
+* Pull-up GPIO pins #23 and #24 to 3V3 (3.3 V) with 3.3 kohm resister.
 * Connect #23 to SDA and #24 to SCL.
+* Supply 5V to Vcc of SCD30, in such a configuration that the power supply can be cut
+with a gpio output (e.g. #25) using a Transistor circuit.
 ## Software setup
 * Add a line in /boot/config.txt as follows
 ```
